@@ -1,0 +1,129 @@
+/* ================= ACCENT ================= */
+:root {
+  --accent: #9ca3af; /* soft silver accent */
+}
+
+/* ================= ROOT ================= */
+:host {
+  display: block;
+  padding: 56px;
+  background-color: #0e0e0e;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+  color: #eaeaea;
+}
+
+/* App note */
+p:first-child {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8b8b8b;
+  margin-bottom: 48px;
+}
+
+/* ================= SECTION TITLES ================= */
+h1 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f5f5f5;
+  margin: 64px 0 18px;
+}
+
+/* Accent line under title */
+h1::after {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background-color: var(--accent);
+  margin-top: 10px;
+  opacity: 0.6;
+}
+
+/* ================= PREMIUM CARD ================= */
+div {
+  background-color: #141414;
+  border-radius: 18px;
+  padding: 28px 32px;
+  margin-top: 12px;
+  border: 1px solid #1f1f1f;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Vertical accent line */
+div::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 22px;
+  width: 3px;
+  height: calc(100% - 44px);
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--accent),
+    transparent
+  );
+  opacity: 0.6;
+}
+
+/* Hover — elegant lift */
+div:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.65);
+}
+
+/* ================= TEXT ================= */
+p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #d6d6d6;
+  margin: 6px 0;
+}
+
+/* ================= SUB TITLES ================= */
+h3 {
+  margin-top: 48px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #cfcfcf;
+}
+
+/* Slice pipe outputs */
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  font-size: 14px;
+  margin: 6px 0;
+  color: #bdbdbd;
+}
+
+/* ================= FEATURE EMPHASIS ================= */
+h1 + div,
+h3 + p {
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* Subtle glow for important values */
+h1 + div p,
+h3 + p {
+  text-shadow: 0 0 8px rgba(156, 163, 175, 0.12);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  :host {
+    padding: 32px;
+  }
+
+  div {
+    padding: 22px;
+  }
+}

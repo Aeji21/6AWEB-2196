@@ -1,0 +1,54 @@
+<p>pipes-demo works!</p>
+
+<h1>PARAMETER</h1>
+<p>Current Date is:{{ presentDate | date:'fullDate' | uppercase}}</p>
+
+
+<h1>CHAINED PIPES</h1>
+<div>
+  Date with uppercase :- {{ presentDate | date:'fullDate' | uppercase }} <br/>
+  Date with lowercase :- {{ presentDate | date:'medium' | lowercase }} <br/>
+</div>
+
+<h1>ASYNCPIPE</h1>
+<div>
+  Seconds changing in Time:
+  {{ time$ | async | date:'mediumTime' }}
+</div>
+
+<h1>CURRENCY PIPE</h1>
+<p>{{ price | currency:'':true }}</p>
+<p>{{ price | currency:'INR' }}</p>
+
+<h1>SLICE PIPE</h1>
+<div>
+  <h3>Start index :- {{ fruits | slice:2 }}</h3>
+  <h4>Start and end index :- {{ fruits | slice:1:4 }}</h4>
+  <h5>Negative index :- {{ fruits | slice:-2 }}</h5>
+  <h6>Negative start and end index :- {{ fruits | slice:-4:-2 }}</h6>
+</div>
+
+<h1>DECIMAL PIPE</h1>
+<div style="text-align: center">
+  <p>Apply formatting: - {{ decimalNum1 | number:'3.1' }}</p>
+  <p>Apply formatting: - {{ decimalNum1 | number:'2.1-4' }}</p>
+</div>
+
+<h3>TITLE CASE PIPE</h3>
+<p>{{ titleText | titlecase }}</p>
+
+<h3>I18nPLURAL PIPE</h3>
+<p>
+  {{ messageCount | i18nPlural: messageMapping }}
+</p>
+
+<h3>I18nSELECT PIPE</h3>
+<p>
+  {{ userGender | i18nSelect: genderMapping }}
+</p>
+
+
+
+
+
+
