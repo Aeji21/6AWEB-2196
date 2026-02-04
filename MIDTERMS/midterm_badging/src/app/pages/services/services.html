@@ -1,0 +1,14 @@
+<div class="page">
+<input
+  type="text"
+  placeholder="Search services..."
+  (input)="onSearch($event.target.value)"
+>
+
+<ul>
+  <li *ngFor="let post of filteredPosts$ | async">
+    <strong>{{ post.id }} - {{ post.title }}</strong><br>
+    {{ post.body | truncate:80 }}
+  </li>
+</ul>
+</div>

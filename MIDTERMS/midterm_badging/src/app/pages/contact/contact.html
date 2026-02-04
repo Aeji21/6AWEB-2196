@@ -1,0 +1,14 @@
+<div class="page">
+<form #f="ngForm">
+  <input name="name" ngModel placeholder="Name">
+  <input name="email" ngModel placeholder="Email">
+  <textarea name="message" ngModel placeholder="Message"></textarea>
+
+  <button type="submit">Submit</button>
+</form>
+
+<h3>Form Preview</h3>
+<p>Name: {{ f.value.name | uppercase }}</p>
+<p>Email: {{ f.value.email }}</p>
+<p>Message: {{ f.value.message }}</p>
+</div>
