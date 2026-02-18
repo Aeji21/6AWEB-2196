@@ -1,0 +1,179 @@
+<div class="page-wrapper">
+
+  <div class="form-card">
+
+    <div class="form-header">
+      <h4>Registration Form</h4>
+    </div>
+
+    <div class="form-body">
+
+      <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+
+
+        <!-- Username -->
+        <input
+          type="text"
+          name="username"
+          [(ngModel)]="username"
+          placeholder="Enter username"
+          required
+          minlength="4"
+          #usernameCtrl="ngModel">
+
+        <small class="error"
+          *ngIf="usernameCtrl.invalid && usernameCtrl.touched">
+          Username is required (min 4 characters)
+        </small>
+
+
+        <!-- Email -->
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="email"
+          placeholder="Enter email"
+          required
+          email
+          #emailCtrl="ngModel">
+
+        <small class="error"
+          *ngIf="emailCtrl.invalid && emailCtrl.touched">
+          Valid email required
+        </small>
+
+
+        <!-- Password -->
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+          placeholder="Enter password"
+          required
+          minlength="6"
+          #passwordCtrl="ngModel">
+
+        <small class="error"
+          *ngIf="passwordCtrl.invalid && passwordCtrl.touched">
+          Password must be at least 6 characters
+        </small>
+
+
+        <!-- Role -->
+        <select
+          name="role"
+          [(ngModel)]="role"
+          required
+          #roleCtrl="ngModel">
+
+          <option value="" disabled selected>Select role</option>
+          <option value="admin">Admin</option>
+          <option value="user">User</option>
+          <option value="guest">Guest</option>
+
+        </select>
+
+        <small class="error"
+          *ngIf="roleCtrl.invalid && roleCtrl.touched">
+          Please select a role
+        </small>
+
+
+        <!-- Gender -->
+        <div class="radio-group">
+          <label>Gender</label>
+
+          <label>
+            <input type="radio" name="gender"
+              value="male"
+              [(ngModel)]="gender"
+              required
+              #genderCtrl="ngModel">
+            Male
+          </label>
+
+          <label>
+            <input type="radio" name="gender"
+              value="female"
+              [(ngModel)]="gender"
+              required>
+            Female
+          </label>
+
+          <label>
+            <input type="radio" name="gender"
+              value="other"
+              [(ngModel)]="gender"
+              required>
+            Other
+          </label>
+
+          <small class="error"
+            *ngIf="genderCtrl.invalid && genderCtrl.touched">
+            Select gender
+          </small>
+        </div>
+
+
+        <!-- Status -->
+        <div class="radio-group">
+          <label>Status</label>
+
+          <label>
+            <input type="radio" name="status"
+              value="permanent"
+              [(ngModel)]="status"
+              required
+              #statusCtrl="ngModel">
+            Permanent
+          </label>
+
+          <label>
+            <input type="radio" name="status"
+              value="probationary"
+              [(ngModel)]="status"
+              required>
+            Probationary
+          </label>
+
+          <small class="error"
+            *ngIf="statusCtrl.invalid && statusCtrl.touched">
+            Select status
+          </small>
+        </div>
+
+
+        <!-- Comments -->
+        <textarea
+          name="comments"
+          [(ngModel)]="comments"
+          rows="3"
+          placeholder="Enter comments"
+          required
+          #commentsCtrl="ngModel">
+        </textarea>
+
+        <small class="error"
+          *ngIf="commentsCtrl.invalid && commentsCtrl.touched">
+          Comments required
+        </small>
+
+
+        <!-- Submit -->
+        <button type="submit" [disabled]="myForm.invalid">
+          Submit
+        </button>
+
+
+<div class="success-message" *ngIf="submitted">
+  ✅ Registration submitted successfully!
+</div>
+
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,102 @@
+<div class="page-wrapper">
+  <div class="card">
+
+    <h3 class="form-title">Employee Profile Form</h3>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <input class="input" placeholder="First Name" formControlName="firstName" />
+      @if (isInvalid('firstName')) {
+        <small class="error">First name required</small>
+      }
+
+      <input class="input" placeholder="Last Name" formControlName="lastName" />
+      @if (isInvalid('lastName')) {
+        <small class="error">Last name required</small>
+      }
+
+      <input class="input" type="email" placeholder="Email" formControlName="email" />
+      @if (isInvalid('email')) {
+        <small class="error">Valid email required</small>
+      }
+
+      <input class="input" placeholder="Phone (11 digits)" formControlName="phone" />
+      @if (isInvalid('phone')) {
+        <small class="error">Valid 11-digit phone required</small>
+      }
+
+      <select class="input" formControlName="department">
+        <option value="">Select Department</option>
+        @for (d of departments; track d) {
+          <option [value]="d">{{ d }}</option>
+        }
+      </select>
+
+      @if (isInvalid('department')) {
+        <small class="error">Department required</small>
+      }
+
+      <!-- Employment Type -->
+      <div class="group">
+        <label>Employment Type</label>
+
+        <div class="radio-row">
+          <label>
+            <input type="radio" value="Full-Time" formControlName="employmentType" />
+            Full-Time
+          </label>
+
+          <label>
+            <input type="radio" value="Part-Time" formControlName="employmentType" />
+            Part-Time
+          </label>
+        </div>
+
+        @if (isInvalid('employmentType')) {
+          <small class="error">Select employment type</small>
+        }
+      </div>
+
+      <!-- Skills -->
+      <div class="group">
+        <label>Skills</label>
+
+        <div class="checkbox-row">
+          @for (skill of skillsList; track skill) {
+            <label>
+              <input
+                type="checkbox"
+                [value]="skill"
+                (change)="onSkillChange($event)" />
+              {{ skill }}
+            </label>
+          }
+        </div>
+
+        @if (isInvalid('skills')) {
+          <small class="error">Select at least one skill</small>
+        }
+      </div>
+
+      <!-- Bio -->
+      <textarea
+        class="input"
+        rows="3"
+        placeholder="Short Bio"
+        formControlName="bio">
+      </textarea>
+
+      @if (isInvalid('bio')) {
+        <small class="error">
+          Bio must be at least 10 characters
+        </small>
+      }
+
+      <button class="btn" type="submit" [disabled]="form.invalid">
+        Submit
+      </button>
+
+    </form>
+
+  </div>
+</div>
