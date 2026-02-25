@@ -1,0 +1,93 @@
+.main-wrapper {
+  min-height: 100vh;
+  background: #1e3c72; /* Solid blue or gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.4s ease;
+}
+
+.dark-mode {
+  background: #121212 !important;
+}
+
+.styled-card {
+  width: 100%;
+  max-width: 460px;
+  border-radius: 16px;
+  padding: 24px;
+  background: white;
+}
+
+/* Dark mode adjustment para sa Card */
+.dark-mode .styled-card {
+  background: #1e1e1e;
+  color: white;
+}
+
+/* Layout para sa Title at Toggle sa loob ng Card */
+.card-top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-title-text {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mode-icon {
+  font-size: 20px;
+  height: 20px;
+  width: 20px;
+  color: #666;
+}
+
+.subtitle {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.w-100 { width: 100%; }
+.mt-20 { margin-top: 20px; }
+.row-section { margin: 16px 0; }
+.gender-row { display: flex; gap: 20px; }
+
+.glow-button {
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.glow-button:not(:disabled) {
+  background: #1e3c72 !important;
+  color: white !important;
+}
+
+.success-banner {
+  background: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
