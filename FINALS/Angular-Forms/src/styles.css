@@ -1,9 +1,0 @@
-/* You can add global styles to this file, and also import other style files */
-/* src/styles.css */
-@import '@angular/material/prebuilt-themes/indigo-pink.css'; 
-
-
-/* Force the button and headers to be blue if the theme isn't loading */
-.mat-primary {
-  background-color: var(--primary-blue) !important;
-}
