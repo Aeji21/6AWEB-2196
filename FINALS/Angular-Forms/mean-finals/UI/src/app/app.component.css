@@ -1,0 +1,137 @@
+/* Background */
+.app-container{
+min-height:100vh;
+padding:50px 20px;
+
+background: linear-gradient(
+180deg,
+#e8f5e9 0%,
+#c8e6c9 30%,
+#81c784 60%,
+#5d4037 100%
+);
+
+font-family: "Segoe UI", sans-serif;
+}
+
+/* Title */
+h1{
+text-align:center;
+font-size:40px;
+color:#1b5e20;
+margin-bottom:40px;
+font-weight:600;
+letter-spacing:1px;
+}
+
+/* Form card */
+.form-card{
+width:420px;
+margin:auto;
+padding:30px;
+
+background: rgba(255,255,255,0.8);
+backdrop-filter: blur(10px);
+
+border-radius:16px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,0.15);
+
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+/* Inputs */
+input{
+padding:12px;
+border-radius:8px;
+border:1px solid #e0e0e0;
+
+font-size:14px;
+
+transition:0.2s;
+}
+
+input:focus{
+outline:none;
+border:1px solid #4caf50;
+box-shadow:0 0 5px rgba(76,175,80,0.3);
+}
+
+/* Add button */
+button{
+padding:12px;
+
+border:none;
+border-radius:8px;
+
+background: linear-gradient(135deg,#2e7d32,#1b5e20);
+
+color:white;
+font-weight:600;
+cursor:pointer;
+
+transition:0.2s;
+}
+
+button:hover{
+transform:translateY(-2px);
+box-shadow:0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Plants container */
+.plants-container{
+margin-top:40px;
+
+display:flex;
+flex-direction:column;
+gap:16px;
+align-items:center;
+}
+
+/* Plant card */
+.plant-card{
+
+width:650px;
+
+background:white;
+padding:18px 22px;
+
+border-radius:12px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+box-shadow:
+0 6px 16px rgba(0,0,0,0.12);
+
+transition:0.2s;
+}
+
+.plant-card:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 22px rgba(0,0,0,0.18);
+}
+
+/* plant text */
+.plant-info{
+font-size:15px;
+color:#2e7d32;
+display:flex;
+flex-direction:column;
+gap:4px;
+}
+
+/* delete button */
+.delete-btn{
+background:#8d6e63;
+padding:8px 12px;
+font-size:13px;
+}
+
+.delete-btn:hover{
+background:#5d4037;
+}

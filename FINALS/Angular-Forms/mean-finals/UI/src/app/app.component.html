@@ -1,0 +1,35 @@
+<div class="app-container">
+
+<h1>🌿 Plant Care Tracker</h1>
+
+<div class="form-card">
+
+<input id="newPlant" placeholder="Plant Name">
+<input id="newSunlight" placeholder="Sunlight Requirement">
+<input id="newWater" placeholder="Water Frequency">
+<input id="newType" placeholder="Plant Type">
+<input id="newLastWatered" placeholder="Last Watered Date">
+
+<button type="button" (click)="addPlant()">Add Plant</button>
+
+</div>
+
+<div class="plants-container">
+
+<div class="plant-card" *ngFor="let plant of plants">
+
+<div class="plant-info">
+🌿 {{plant.plantName}}
+<span>☀ {{plant.sunlight}}</span>
+<span>💧 {{plant.water}}</span>
+<span>🌱 {{plant.type}}</span>
+<span>📅 {{plant.lastWatered}}</span>
+</div>
+
+<button class="delete-btn" (click)="deletePlant(plant.id)">Delete</button>
+
+</div>
+
+</div>
+
+</div>
